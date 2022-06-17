@@ -53,7 +53,7 @@ class Frame extends JFrame {
 		// Kreiranje panela p
 		
 		JPanel p = new JPanel();
-		p.setBackground(Color.WHITE); 
+		p.setBackground(Color.BLUE); 
 		p.setLayout(new BorderLayout());
 		this.add(p, BorderLayout.CENTER); 
 
@@ -62,11 +62,22 @@ class Frame extends JFrame {
 		MyMenuBar menu = new MyMenuBar();
 		this.setJMenuBar(menu);
 		
+		//CENTRALNI PROZOR SA TABOVIMA
+		JLabel tabelaZaposleni = new JLabel("Tabela zaposlenih");
+		JLabel tabelaSoftvera = new JLabel("Tabela softvera");
+				
+		//Tabovi
+		JTabbedPane tabs = new JTabbedPane();
+		tabs.addTab("Zaposleni", tabelaZaposleni);
+		tabs.addTab("Softveri", tabelaSoftvera);
+		add(tabs);
+		
 		// Dodavanje Toolbar-a
 		
 		MyToolbar toolbar = new MyToolbar();
-		p.add(toolbar, BorderLayout.NORTH); 
-
+		this.add(toolbar, BorderLayout.NORTH); 
+		
+		
 		// Kreiranje Status Bar-a sa Datumom 
 
 		// deo koda preuzet sa sajta stackoverflow.com
@@ -101,21 +112,23 @@ class MyMenuBar extends JMenuBar {
 		
 		// New
 		JMenu miNew = new JMenu("New");
-		JMenuItem miZaposleni = new JMenuItem("Zaposleni");
-		JMenuItem miSoftver = new JMenuItem("Softver");
+		miNew.setIcon(new ImageIcon("ikonice/toolbar_new25.png"));
+		JMenuItem miZaposleni = new JMenuItem("Zaposleni", new ImageIcon ("ikonice/menubar_zaposleni_25.png"));
+		JMenuItem miSoftver = new JMenuItem("Softver", new ImageIcon ("ikonice/menubar_softveri_25.png"));
 		miNew.add(miZaposleni);
 		miNew.addSeparator();
 		miNew.add(miSoftver);
 
 		// Open
 		JMenu miOpen = new JMenu("Open");
+		miOpen.setIcon(new ImageIcon("ikonice/menubar_open_25.png"));
 		
 		miOpen.add(miZaposleni);
 		miOpen.addSeparator();
 		miOpen.add(miSoftver);
 		
 		// Exit
-		JMenuItem miExit = new JMenuItem("Exit");
+		JMenuItem miExit = new JMenuItem("Exit", new ImageIcon("ikonice/menubar_exit_25.png"));
 
 		file.add(miNew);
 		file.addSeparator();
@@ -125,8 +138,8 @@ class MyMenuBar extends JMenuBar {
 
 		// Edit
 		JMenu edit = new JMenu("Edit");
-		JMenuItem miEdit = new JMenuItem("Edit");
-		JMenuItem miDelete = new JMenuItem("Delete");
+		JMenuItem miEdit = new JMenuItem("Edit", new ImageIcon("ikonice/toolbar_edit25.png"));
+		JMenuItem miDelete = new JMenuItem("Delete", new ImageIcon("ikonice/toolbar_delete25.png"));
 		
 		edit.add(miEdit);
 		edit.addSeparator();
@@ -134,7 +147,7 @@ class MyMenuBar extends JMenuBar {
 		
 		// Help
 		JMenu help = new JMenu("Help");
-		JMenuItem miAbout = new JMenuItem("About");
+		JMenuItem miAbout = new JMenuItem("About",new ImageIcon("ikonice/menubar_about_25.png"));
 		help.add(miAbout);
 
 		add(file);
