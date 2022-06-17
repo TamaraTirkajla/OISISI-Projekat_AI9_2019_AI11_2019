@@ -2,9 +2,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,6 +18,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
@@ -23,83 +28,78 @@ public class Projekat {
 
 	public static void main (String[] args) {
 		
-		Frame1 frame1 = new Frame1();
-		frame1.setVisible(true);
+		Frame PROZOR = new Frame();
+		PROZOR.setVisible(true);
 		
 	} 
 }
 
-//Deo koda preuzet iz materijala sa vezbi - Termin 3
-class Frame1 extends JFrame {
+// Deo koda preuzet iz materijala sa vezbi - Termin 3
+class Frame extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7240939624608584060L;
 
-	public Frame1() {
+	public Frame() {
 
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		int screenHeight = screenSize.height;
 		int screenWidth = screenSize.width;
-		// Podesavamo dimenzije prozora na polovinu dimenzija ekrana
-		setSize(3*screenWidth / 4, 3*screenHeight / 4);
-		// Podesavamo naslov
-		setTitle("Glavni prozor");
-		// Postavljamo akciju pri zatvaranju prozora
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// postavljamo JFrame na centar ekrana
-		setLocationRelativeTo(null);
+		setSize(3*screenWidth / 4, 3*screenHeight / 4); // Dimenzije prozora
+		setTitle("Glavni prozor"); // Naslov prozora
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Akcija pri zatvaranju prozora
+		setLocationRelativeTo(null); // PostavljenJFrame na centar ekrana
 		
-		// kreiranje naslednika klase JMenuBar i njeno postavljanje u glavni prozor
-		// aplikacije
+		// Kreiranje panela p
+		
+		JPanel p = new JPanel();
+		p.setBackground(Color.WHITE); 
+		p.setLayout(new BorderLayout());
+		this.add(p, BorderLayout.CENTER); 
+
+		// Dodavanje Menu Bar-a
+		
 		MyMenuBar menu = new MyMenuBar();
 		this.setJMenuBar(menu);
 		
-		// kreiramo instancu klase Toolbar
+		// Dodavanje Toolbar-a
+		
 		MyToolbar toolbar = new MyToolbar();
-		// dodajemo u Frame nas Toolbar, klasa BorderLayout se odnosi na rad sa
-		// prostorim rasporedom
-		// komponenti, za sada je dovoljno znati da na ovaj nacin Toolbar se postavlja
-		// na vrh glavne forme
-		add(toolbar, BorderLayout.NORTH);
+		p.add(toolbar, BorderLayout.NORTH); 
 
-		// kreiramo jedan panel i dodajemo ga u JFrame
-		JPanel panel = new JPanel();
-		this.add(panel);
-		
-		//deo koda preuzet sa sajta stackoverflow.com
-		//link: https://stackoverflow.com/questions/3035880/how-can-i-create-a-bar-in-the-bottom-of-a-java-app-like-a-status-bar
-		
-		// create the status bar panel and shove it down the bottom of the frame
-		JPanel statusPanel = new JPanel();
-		statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		add(statusPanel, BorderLayout.SOUTH);
-		statusPanel.setPreferredSize(new Dimension(getWidth(), 20));
-		statusPanel.setLayout(new BoxLayout(statusPanel, BoxLayout.X_AXIS));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-		JLabel statusLabel = new JLabel(LocalDate.now().format(formatter));
-		statusLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		statusPanel.add(statusLabel);
-		
+		// Kreiranje Status Bar-a sa Datumom 
+
+		// deo koda preuzet sa sajta stackoverflow.com
+		// link: https://stackoverflow.com/questions/3035880/how-can-i-create-a-bar-in-the-bottom-of-a-java-app-like-a-status-bar
+		JPanel StatusBar = new JPanel();	
+		StatusBar.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		StatusBar.setPreferredSize(new Dimension(getWidth(), 30));
+		StatusBar.setLayout(new BoxLayout(StatusBar, BoxLayout.X_AXIS));
+		this.add(StatusBar, BorderLayout.SOUTH);
+		String DatePattern = "dd.MM.yyyy.";
+		DateFormat formatter = new SimpleDateFormat(DatePattern);
+		Date Datum = new Date();
+	    String DanasnjiDatum = formatter.format(Datum);
+		JLabel DatumLabel = new JLabel(DanasnjiDatum);
+		StatusBar.add(Box.createHorizontalGlue());
+		StatusBar.add(DatumLabel);
+		StatusBar.add(Box.createRigidArea(new Dimension(10,0)));
 	}
 
 }
 
+// Kreiranje Menu Bar-a
+
 class MyMenuBar extends JMenuBar {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7863806568418316202L;
 
 	public MyMenuBar() {
 
-		//FILE
+		// File
 		JMenu file = new JMenu("File");
 		
-		//new
+		// New
 		JMenu miNew = new JMenu("New");
 		JMenuItem miZaposleni = new JMenuItem("Zaposleni");
 		JMenuItem miSoftver = new JMenuItem("Softver");
@@ -107,13 +107,14 @@ class MyMenuBar extends JMenuBar {
 		miNew.addSeparator();
 		miNew.add(miSoftver);
 
-		//open
+		// Open
 		JMenu miOpen = new JMenu("Open");
+		
 		miOpen.add(miZaposleni);
 		miOpen.addSeparator();
 		miOpen.add(miSoftver);
 		
-		//exit
+		// Exit
 		JMenuItem miExit = new JMenuItem("Exit");
 
 		file.add(miNew);
@@ -122,7 +123,7 @@ class MyMenuBar extends JMenuBar {
 		file.addSeparator();
 		file.add(miExit);
 
-		//EDIT
+		// Edit
 		JMenu edit = new JMenu("Edit");
 		JMenuItem miEdit = new JMenuItem("Edit");
 		JMenuItem miDelete = new JMenuItem("Delete");
@@ -131,7 +132,7 @@ class MyMenuBar extends JMenuBar {
 		edit.addSeparator();
 		edit.add(miDelete);
 		
-		//HELP
+		// Help
 		JMenu help = new JMenu("Help");
 		JMenuItem miAbout = new JMenuItem("About");
 		help.add(miAbout);
@@ -139,22 +140,17 @@ class MyMenuBar extends JMenuBar {
 		add(file);
 		add(edit);
 		add(help);
-
 	}
-
 }
+
+// Kreiranje Toolbar-a
 
 class MyToolbar extends JToolBar {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1209699209668701828L;
 
 	public MyToolbar() {
-		// u konstruktor nadklase, tj klase JToolbar prosledjuje
-		// se orijentacija toolbar-a, moguca i sa konstantom: SwingConstants.VERTICAL
-
+		
 		super(SwingConstants.HORIZONTAL);
 		JButton btnNew = new JButton();
 		btnNew.setToolTipText("New");
@@ -175,10 +171,7 @@ class MyToolbar extends JToolBar {
 		tglBtnBold.setIcon(new ImageIcon("ikonice/toolbar_delete25.png"));
 		add(tglBtnBold);
 
-		// toolbar je pokretljiv, probati i sa staticnim toolbarom
 		setFloatable(true);
-		setBackground(new Color(255, 255, 204));
-
+		setBackground(new Color(255, 255, 200));
 	}
-
 }
