@@ -1,6 +1,8 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -10,11 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+//import gui.panels.focus.FocusListenerPanel;
+
 public class PROZORNoviZaposleni extends JFrame {
 
 public PROZORNoviZaposleni() {
 		
-			JDialog dijalogZaposleni;  
+			JDialog dijalogZaposleni;
 	 
 	        JFrame frameZaposleni = new JFrame();  
 	        dijalogZaposleni = new JDialog(frameZaposleni, "Zaposleni", true); 

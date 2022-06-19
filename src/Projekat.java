@@ -2,6 +2,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -17,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
@@ -33,9 +37,9 @@ public class Projekat {
 		
 		// Dijalozi
 		
-		PROZORNoviZaposleni PROZORZaposleni = new PROZORNoviZaposleni();
-		PROZORNoviSoftver PROZORSoftver = new PROZORNoviSoftver();
-		PROZORAbout PROZORAbout = new PROZORAbout();
+		//PROZORNoviZaposleni PROZORZaposleni = new PROZORNoviZaposleni();
+		//PROZORNoviSoftver PROZORSoftver = new PROZORNoviSoftver();
+		//PROZORAbout PROZORAbout = new PROZORAbout();
 	} 
 }
 
@@ -54,6 +58,9 @@ class Frame extends JFrame {
 		setTitle("Glavni prozor"); // Naslov prozora
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Akcija pri zatvaranju prozora
 		setLocationRelativeTo(null); // PostavljenJFrame na centar ekrana
+		
+		//dodajemo Window Listener da bi se prikazao opcioni dijalog pri izlasku iz aplikacije
+		addWindowListener(new WListener());
 		
 		// Kreiranje panela p
 		
@@ -119,7 +126,23 @@ class MyMenuBar extends JMenuBar {
 		miNew.setIcon(new ImageIcon("ikonice/toolbar_new25.png"));
 		
 		JMenuItem miNoviZaposleni = new JMenuItem("Zaposleni", new ImageIcon ("ikonice/menubar_zaposleni_25.png"));
+		miNoviZaposleni.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PROZORNoviZaposleni PROZORZaposleni = new PROZORNoviZaposleni();
+				
+			}
+		});
 		JMenuItem miNoviSoftver = new JMenuItem("Softver", new ImageIcon ("ikonice/menubar_softveri_25.png"));
+		miNoviSoftver.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PROZORNoviSoftver PROZORSoftver = new PROZORNoviSoftver();
+				
+			}
+		});
 		miNew.add(miNoviZaposleni);
 		miNew.addSeparator();
 		miNew.add(miNoviSoftver);
@@ -136,6 +159,13 @@ class MyMenuBar extends JMenuBar {
 		
 		// Exit
 		JMenuItem miExit = new JMenuItem("Exit", new ImageIcon("ikonice/menubar_exit_25.png"));
+		miExit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 
 		file.add(miNew);
 		file.addSeparator();
@@ -155,6 +185,14 @@ class MyMenuBar extends JMenuBar {
 		// Help
 		JMenu help = new JMenu("Help");
 		JMenuItem miAbout = new JMenuItem("About",new ImageIcon("ikonice/menubar_about_25.png"));
+		miAbout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PROZORAbout PROZORAbout = new PROZORAbout();
+				
+			}
+		});
 		help.add(miAbout);
 
 		add(file);
