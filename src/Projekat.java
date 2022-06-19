@@ -31,6 +31,11 @@ public class Projekat {
 		Frame PROZOR = new Frame();
 		PROZOR.setVisible(true);
 		
+		// Dijalozi
+		
+		PROZORNoviZaposleni PROZORZaposleni = new PROZORNoviZaposleni();
+		PROZORNoviSoftver PROZORSoftver = new PROZORNoviSoftver();
+		PROZORAbout PROZORAbout = new PROZORAbout();
 	} 
 }
 
@@ -77,7 +82,6 @@ class Frame extends JFrame {
 		MyToolbar toolbar = new MyToolbar();
 		this.add(toolbar, BorderLayout.NORTH); 
 		
-		
 		// Kreiranje Status Bar-a sa Datumom 
 
 		// deo koda preuzet sa sajta stackoverflow.com
@@ -113,16 +117,19 @@ class MyMenuBar extends JMenuBar {
 		// New
 		JMenu miNew = new JMenu("New");
 		miNew.setIcon(new ImageIcon("ikonice/toolbar_new25.png"));
-		JMenuItem miZaposleni = new JMenuItem("Zaposleni", new ImageIcon ("ikonice/menubar_zaposleni_25.png"));
-		JMenuItem miSoftver = new JMenuItem("Softver", new ImageIcon ("ikonice/menubar_softveri_25.png"));
-		miNew.add(miZaposleni);
+		
+		JMenuItem miNoviZaposleni = new JMenuItem("Zaposleni", new ImageIcon ("ikonice/menubar_zaposleni_25.png"));
+		JMenuItem miNoviSoftver = new JMenuItem("Softver", new ImageIcon ("ikonice/menubar_softveri_25.png"));
+		miNew.add(miNoviZaposleni);
 		miNew.addSeparator();
-		miNew.add(miSoftver);
+		miNew.add(miNoviSoftver);
 
 		// Open
 		JMenu miOpen = new JMenu("Open");
 		miOpen.setIcon(new ImageIcon("ikonice/menubar_open_25.png"));
 		
+		JMenuItem miZaposleni = new JMenuItem("Zaposleni", new ImageIcon ("ikonice/menubar_zaposleni_25.png"));
+		JMenuItem miSoftver = new JMenuItem("Softver", new ImageIcon ("ikonice/menubar_softveri_25.png"));
 		miOpen.add(miZaposleni);
 		miOpen.addSeparator();
 		miOpen.add(miSoftver);
