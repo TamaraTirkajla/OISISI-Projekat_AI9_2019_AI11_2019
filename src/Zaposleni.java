@@ -2,6 +2,7 @@
 import java.time.LocalDate;
 
 public class Zaposleni {
+	private long Id;
 	private String Ime;
 	private String Prezime;
 	private String Jmbg;
@@ -13,6 +14,9 @@ public class Zaposleni {
 		
 	// Seteri
 	
+	public void setId(long id) {		//NOVO
+	this.Id = id;
+	}
 	public void setIme(String ime) {
 	this.Ime = ime;
 	}
@@ -40,6 +44,9 @@ public class Zaposleni {
 	
 	// Geteri
 	
+	public long getId() {
+	return Id;
+	}
 	public String getIme() {
 	return Ime;
 	}
@@ -67,7 +74,9 @@ public class Zaposleni {
 	
 	// Zaposleni
 	
-	public Zaposleni(String ime, String prezime, String jmbg, String datumRodjenja, String email, Adresa adresaStanovanja, Softver softver, String pozicija) {
+	public Zaposleni(long id,String ime, String prezime, String jmbg, String datumRodjenja, String email, Adresa adresaStanovanja, Softver softver, String pozicija) {
+	super();
+	this.Id = id;
 	this.Ime = ime;
 	this.Prezime = prezime;
 	this.Jmbg = jmbg;
@@ -77,12 +86,4 @@ public class Zaposleni {
 	this.Softver = softver;
 	this.Pozicija = pozicija;
 	}
-	
-	/*
-	@Override
-    public String toString() {
-        return "\nIme: "+this.Ime+"\nPrezime:"+this.Prezime+"\nJmbg: "+this.Jmbg+"\nDatum rodjenja:"+
-        this.DatumRodjenja+"\nEmail: "+this.Email+"\nAdresa stanovanja: "+this.AdresaStanovanja+"\nSoftver: "+this.Softver+"\nPozicija: "+this.Pozicija;
-    }
-    */
 }

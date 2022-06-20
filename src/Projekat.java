@@ -103,6 +103,8 @@ class Frame extends JFrame {
 		JTabbedPane tabs = new JTabbedPane();
 		tabs.setBackground(Color.WHITE);
 			
+		
+		/*MOZDA JE BOLJE OVO RESITI SA PANELOM A NE TABELOM
 		// Tab zaposleni
 		
 		String[] koloneZ = {"Ime:", 
@@ -196,9 +198,9 @@ class Frame extends JFrame {
 	    JScrollPane scrollPSoftver = new JScrollPane(TabelaSoftver);
 		tabs.addTab("Sofver", scrollPSoftver);
 		p.add(tabs, BorderLayout.CENTER);
-	}
+	*/
 
-}
+}}
 
 // Kreiranje Menu Bar-a
 

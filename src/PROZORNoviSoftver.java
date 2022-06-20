@@ -27,7 +27,7 @@ public PROZORNoviSoftver(){
 	 
     JFrame frameSoftver = new JFrame();  
     dijalogSoftver = new JDialog(frameSoftver, "Softver", true); 
-    dijalogSoftver.setSize(640,950);    
+    dijalogSoftver.setSize(640,810);    
     setLocationRelativeTo(null);
     
     // UNOS PODATAKA
@@ -80,7 +80,7 @@ public PROZORNoviSoftver(){
 	// Fajl format
 	
 	JLabel lblFajlFormat=new JLabel("Fajl format:");
-    lblFajlFormat.setPreferredSize(d1);
+    lblFajlFormat.setPreferredSize(d2);
     String[] FajlFormat= {".max",".fbx",".obj",".psd",".jpg",".png"};
     JComboBox<String> cbFajlFormat = new JComboBox<String>(FajlFormat);
     cbFajlFormat.setVisible(true);
@@ -91,7 +91,7 @@ public PROZORNoviSoftver(){
 	// Alati
 	
 	JLabel lblAlati=new JLabel("Alati:");
-	lblAlati.setPreferredSize(d1);
+	lblAlati.setPreferredSize(d2);
 	String[] Alati = {"Mirror","Cut","Move","Clone"};
     JComboBox<String> cbAlati = new JComboBox<String>(Alati);
     cbAlati.setVisible(true);
@@ -102,7 +102,7 @@ public PROZORNoviSoftver(){
 	 // Modifikator
 	
 	JLabel lblModifikator=new JLabel("Modifikator:");
-	lblModifikator.setPreferredSize(d1);
+	lblModifikator.setPreferredSize(d2);
 	String[] Modifikator = {"Bend","Chamfer","Lattice","Melt","Displace","FFD","HSDS","Ripple"};
     JComboBox<String> cbModifikator = new JComboBox<String>(Modifikator);
     cbModifikator.setVisible(true);
@@ -120,7 +120,7 @@ public PROZORNoviSoftver(){
 	pan1.add(txtMaterijali);
 	
 	JLabel lblKamera=new JLabel("Kamera:");
-	lblKamera.setPreferredSize(d1);
+	lblKamera.setPreferredSize(d2);
 	String[] Kamera= {"Top","Front","Left","Perspektiva"};
     JComboBox<String> cbKamera = new JComboBox<String>(Kamera);
     cbKamera.setVisible(true);
@@ -136,7 +136,7 @@ public PROZORNoviSoftver(){
 	pan1.add(txtObjekti);
 
 	JLabel lblSvetlo=new JLabel("Svetlo:");
-    lblSvetlo.setPreferredSize(d1);
+    lblSvetlo.setPreferredSize(d2);
     String[] Svetlo= {"Plane light","Disc light","Sphere light","Mesh light", "Dome light"};
     JComboBox<String> cbSvetlo = new JComboBox<String>(Svetlo);
     cbSvetlo.setVisible(true);

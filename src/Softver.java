@@ -1,6 +1,7 @@
 import java.util.List;
 
 public class Softver {
+	private long Id;
 	private List<String> NazivSoft;
 	private Cetkica Cetkica;
 	private List<String> FajlFormat;
@@ -10,6 +11,9 @@ public class Softver {
 	
 	// Seteri
 	
+	public void setId(long id) {
+	this.Id = id;
+	}
 	public void setNazivSoft(List<String> nazivSoft) {
 	this.NazivSoft = nazivSoft;
 	}
@@ -30,7 +34,10 @@ public class Softver {
 	}
 		
 	// Geteri
-		
+	
+	public long getId() {
+	return Id;
+	}
 	public List<String> getNazivSoft() {
 	return NazivSoft;
 	}
@@ -52,7 +59,9 @@ public class Softver {
 	
 	// Softver
 	
-	public Softver(List<String> nazivSoft, Cetkica cetkica, List<String> fajlFormat, List<String> alati, Render render, List<String> modifikator) {
+	public Softver(long id,List<String> nazivSoft, Cetkica cetkica, List<String> fajlFormat, List<String> alati, Render render, List<String> modifikator) {
+	super();
+	this.Id = id;
 	this.NazivSoft = nazivSoft;
 	this.Cetkica = cetkica;
 	this.FajlFormat = fajlFormat;
@@ -60,12 +69,4 @@ public class Softver {
 	this.Render = render;
 	this.Modifikator = modifikator;
 	}
-	
-	/*
-	@Override
-    public String toString() {
-        return "\nNaziv softvera:"+this.NazivSoft+"\nCetkica:"+this.Cetkica+"\nFajl format: "+this.FajlFormat+"\nAlati: "+
-        this.Alati+"\nRender:"+this.Render+"\nModifikator: "+this.Modifikator;
-    }
-    */
 }

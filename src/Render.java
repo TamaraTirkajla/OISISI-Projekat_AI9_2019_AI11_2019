@@ -1,6 +1,7 @@
 import java.util.List;
 
 public class Render {
+	private long id;
 	private String Materijali;
 	private List<String> Kamera;
 	private String Objekti;
@@ -8,6 +9,9 @@ public class Render {
 		
 	// Seteri
 	
+	public void setId(long id) {
+	this.id = id;
+	}
 	public void setMaterijali(String materijali) {
 	this.Materijali = materijali;
 	}
@@ -23,6 +27,9 @@ public class Render {
 	
 	// Geteri
 	
+	public long getId() {
+	return id;
+	}
 	public String getMaterijali() {
 	return Materijali;
 	}
@@ -38,16 +45,38 @@ public class Render {
 	
 	// Render
 	
-	public Render(String materijali, List<String> kamera, String objekti, List<String> svetlo) {
+	public Render(long id, String materijali, List<String> kamera, String objekti, List<String> svetlo) {
+	super();
+	this.id = id;
 	this.Materijali = materijali;
 	this.Kamera = kamera;
 	this.Objekti = objekti;
 	this.Svetlo = svetlo;
 	}
 	
-	/*
+	// kod nastao po ugledu na primere sa sajta:
+	// https://www.tutorialspoint.com/java/lang/stringbuilder_append_string.htm
 	@Override
 	public String toString() {
-	return "\nMaterijali:"+this.Materijali+"\nKamera:"+this.Kamera+"\nObjekti: "+this.Objekti+"\nNaziv rendera: "+this.NazivRend;
-	}*/
+		StringBuilder Render = new StringBuilder();
+		Render.append(this.Materijali);
+		Render.append(", ");
+		for (int a = 0; a<Kamera.size(); a++) {
+		String k = Kamera.get(a);
+		Render.append(k);
+		if(!(a == Kamera.size()-1)) {
+		Render.append(", ");
+		}
+		}
+		Render.append(this.Objekti);
+		Render.append(", ");
+		for (int a = 0; a<Svetlo.size(); a++) {
+		String s = Svetlo.get(a);
+		Render.append(s);
+		if(!(a == Svetlo.size()-1)) {
+		Render.append(", ");
+		}
+	}
+	return Render.toString();
+	}
 }

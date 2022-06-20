@@ -37,12 +37,23 @@ public class Cetkica {
 	this.NazivCet = nazivCet;
 	this.Namena = namena;
 	this.Boja = boja;
-	}
-	
-	/*
+	}	
+
+	// kod nastao po ugledu na primere sa sajta:
+	// https://www.tutorialspoint.com/java/lang/stringbuilder_append_string.htm
 	@Override
 	public String toString() {
-	return "\nNaziv cetkice:"+this.NazivCet+"\nNamena:"+this.Namena+"\nBoja: "+this.Boja;
-	}
-	*/
+		StringBuilder Cetkica = new StringBuilder();
+		for (int a = 0; a<NazivCet.size(); a++) {
+		String k = NazivCet.get(a);
+		Cetkica.append(k);
+		if(!(a == NazivCet.size()-1)) {
+		Cetkica.append(", ");
+		}
+		}
+		Cetkica.append(this.Namena);
+		Cetkica.append(", ");
+		Cetkica.append(this.Boja);
+		return Cetkica.toString();
+		}
 }

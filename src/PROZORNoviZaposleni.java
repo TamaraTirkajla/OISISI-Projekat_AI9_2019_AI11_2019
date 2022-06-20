@@ -30,7 +30,7 @@ public PROZORNoviZaposleni() {
 	 
     JFrame frameZaposleni = new JFrame();  
     dijalogZaposleni = new JDialog(frameZaposleni, "Novi zaposleni", true); 
-    dijalogZaposleni.setSize(640,480);    
+    dijalogZaposleni.setSize(640,590);    
     setLocationRelativeTo(null);
     
     // UNOS PODATAKA
@@ -88,7 +88,7 @@ public PROZORNoviZaposleni() {
 	// Ulica
 	
 	JLabel lblUlica=new JLabel("Ulica:");
-	lblUlica.setPreferredSize(new Dimension(40,20));
+	lblUlica.setPreferredSize(d3);
 	JTextField txtUlica=new JTextField();
 	txtUlica.setPreferredSize(new Dimension(300,20));
 	pan2.add(lblUlica);
@@ -97,7 +97,7 @@ public PROZORNoviZaposleni() {
 	// Broj
 	
 	JLabel lblBroj=new JLabel("Broj:");
-	lblBroj.setPreferredSize(new Dimension(30,20));
+	lblBroj.setPreferredSize(d3);
 	JTextField txtBroj=new JTextField();
 	txtBroj.setPreferredSize(new Dimension(50,20));
 	pan2.add(lblBroj);
@@ -106,7 +106,7 @@ public PROZORNoviZaposleni() {
 	// Grad
 	
 	JLabel lblGrad=new JLabel("Grad:");
-	lblGrad.setPreferredSize(new Dimension(30,20));
+	lblGrad.setPreferredSize(d3);
 	JTextField txtGrad=new JTextField();
 	txtGrad.setPreferredSize(new Dimension(135,20));
 	pan2.add(lblGrad);

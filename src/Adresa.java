@@ -31,6 +31,7 @@ public class Adresa {
 	// Adresa
 	
 	public Adresa(String br, String ul, String gr) {
+	super();
 	this.Br = br;
 	this.Ul = ul;
 	this.Gr = gr;
