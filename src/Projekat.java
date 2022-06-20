@@ -39,11 +39,6 @@ public class Projekat {
 		
 		Frame PROZOR = new Frame();
 		PROZOR.setVisible(true);
-		
-		// Dijalozi
-		//PROZORNoviZaposleni PROZORZaposleni = new PROZORNoviZaposleni();
-		//PROZORNoviSoftver PROZORSoftver = new PROZORNoviSoftver();
-		//PROZORAbout PROZORAbout = new PROZORAbout();
 	} 
 }
 
@@ -114,32 +109,29 @@ class Frame extends JFrame {
 				"Prezime:",
 				"Jmbg:",
 				"Datum rodjenja:",
-				"Ulica:",
-				"Broj:",
-				"Grad:",
-				"email:",
-				"Softver:"
+				"Adresa:",
+				"Email:",
+				"Softveri:",
+				"Pozicija:"
 				};
 		Object[][] podaciZ = {
 				{"Dunja", 
 				"Spanovic",
 				"0904000815000",
 				"9.4.2000.",
-				"Svetozara Miletica", 
-				"bb",
-				"Conoplja",
+				"Svetozara Miletica bb, Conoplja",
 				"spanovic2000@gmail.com",
-				"PhotoShop"
+				"PhotoShop",
+				"Ilustrator"
 				},
 				{"Tamara", 
 				"Tirkajla",
 				"2309000815000",
 				"23.09.2000.",
-				"Radnicka", 
-				"25",
-				"Novi Sad",
+				"Radnicka 25, Novi Sad", 
 				"tamara.tirkajla00@gmail.com",
-				"ZBrush"
+				"ZBrush",
+				"Riger"
 				}
 			};
 		
@@ -162,33 +154,36 @@ class Frame extends JFrame {
 				"Boja cetkice:",
 				"Fajl format:",
 				"Alati:",
+				"Modifikatori:",
 				"Materijal:",
 				"Kamera:",
 				"Objekti:",
-				"Naziv rendera:"
+				"Svetlo:"
 				};
 		Object[][] podaciS = {
 				{"ZBrush", 
 				"Standard",
 				"Dodavanje mase",
 				"Lilava",
-				".zpr",
-				"cut",
-				"krzno",
-				"front",
-				"glava",
-				"glava.jpg"
+				".max",
+				"Cut",
+				"Bend",
+				"Staklo",
+				"Top",
+				"prozor2",
+				"Plane light"
 				},
 				{"PhotoShop", 
-				"Pen",
+				"Deform",
 				"Iscrtavanje",
 				"Crna",
 				".psd",
-				"puppet warp",
-				"papir",
-				"top",
-				"slika",
-				"pixel.jpg"
+				"Mirror",
+				"Chamfer",
+				"Staklo",
+				"Front",
+				"glava1",
+				"Disc light"
 				},
 				};
 		

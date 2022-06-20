@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class KListener implements KeyListener {
+public class KListenerDatum implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
@@ -15,10 +15,9 @@ public class KListener implements KeyListener {
 			return;
 		}
 		JTextField txt = (JTextField) arg0.getComponent();
-		if (txt.getText().length() == 13) {
-			// vec je uneto 13 karaktara
-			JOptionPane.showMessageDialog(null, "Možete uneti maksimalno 13 karaktera!");
-			txt.setText(txt.getText().substring(0, 13));
+		if (txt.getText().length() == 11) {
+			JOptionPane.showMessageDialog(null, "Datum rodjenja je predugacak");
+			txt.setText(txt.getText().substring(0, 11));
 		}
 
 	}
@@ -32,8 +31,8 @@ public class KListener implements KeyListener {
 		}
 		char c = arg0.getKeyChar();
 		if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8'
-				&& c != '9') {
-			JOptionPane.showMessageDialog(null, "Dozvoljen je unos samo brojeva!");
+				&& c != '9' && c != '.') {
+			JOptionPane.showMessageDialog(null, "Uneti su nevazeci karakteri");
 			JTextField txt = (JTextField) arg0.getComponent();
 			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 		}

@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class KListener implements KeyListener {
+public class KListenerJMBG implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
@@ -16,8 +16,7 @@ public class KListener implements KeyListener {
 		}
 		JTextField txt = (JTextField) arg0.getComponent();
 		if (txt.getText().length() == 13) {
-			// vec je uneto 13 karaktara
-			JOptionPane.showMessageDialog(null, "Možete uneti maksimalno 13 karaktera!");
+			JOptionPane.showMessageDialog(null, "JMBG ne moze imati vise od 13 cifara");
 			txt.setText(txt.getText().substring(0, 13));
 		}
 
@@ -33,7 +32,7 @@ public class KListener implements KeyListener {
 		char c = arg0.getKeyChar();
 		if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8'
 				&& c != '9') {
-			JOptionPane.showMessageDialog(null, "Dozvoljen je unos samo brojeva!");
+			JOptionPane.showMessageDialog(null, "Potrebno je uneti samo brojeve");
 			JTextField txt = (JTextField) arg0.getComponent();
 			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 		}

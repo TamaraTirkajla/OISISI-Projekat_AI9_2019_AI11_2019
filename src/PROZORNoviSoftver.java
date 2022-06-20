@@ -27,109 +27,143 @@ public PROZORNoviSoftver(){
 	 
     JFrame frameSoftver = new JFrame();  
     dijalogSoftver = new JDialog(frameSoftver, "Softver", true); 
-    dijalogSoftver.setSize(500,500);    
+    dijalogSoftver.setSize(640,950);    
     setLocationRelativeTo(null);
     
-    frameSoftver.setLayout(new FlowLayout());
-	JTextField NazivSoftvera = new JTextField(10);
-	JTextField NazivCet = new JTextField(10);
-	JTextField Namena = new JTextField(10);
-	JTextField Boja = new JTextField(10);
-	JTextField FajlFormat = new JTextField(10);
-	JTextField Alati = new JTextField(10);
-	JTextField Materijali = new JTextField(10);
-	JTextField Kamera = new JTextField(10);
-	JTextField Objekti = new JTextField(10);
-	JTextField NazivRend = new JTextField(10);
-	JTextField Modifikator = new JTextField(10);
-	
-	JPanel myPanel = new JPanel();
-	
-	myPanel.add(new JLabel("Naziv Softvera:"));
-	myPanel.add(NazivSoftvera);
-	myPanel.add(new JLabel("Naziv cetkice:"));
-	myPanel.add(NazivCet);
-	myPanel.add(new JLabel("Namena:"));
-	myPanel.add(Namena);
-	myPanel.add(new JLabel("Boja:"));
-	myPanel.add(Boja);
-	myPanel.add(new JLabel("Fajl format:"));
-	myPanel.add(FajlFormat);
-	myPanel.add(new JLabel("Alati:"));
-	myPanel.add(Alati);
-	myPanel.add(new JLabel("Materijali:"));
-	myPanel.add(Materijali);
-	myPanel.add(new JLabel("Kamera:"));
-	myPanel.add(Kamera);
-	myPanel.add(new JLabel("Objekti:"));
-	myPanel.add(Objekti);
-	myPanel.add(new JLabel("Naziv rendera:"));
-	myPanel.add(NazivRend);
-	myPanel.add(new JLabel("Modifikator:"));
-	myPanel.add(Modifikator);
-	
-	myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
-	int result = JOptionPane.showConfirmDialog(
-		    null, myPanel, "Unos novog Softvera", JOptionPane.OK_CANCEL_OPTION);
-	//verovatno treba dodati sta ce se desiti klikom na OK i CANCEL pomocu result-a
-	if (result!=JOptionPane.OK_OPTION){
-		
-		frameSoftver.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-	}
-	else{
-		frameSoftver.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	}
+    // UNOS PODATAKA
     
+    JPanel center1 = new JPanel();
+	BoxLayout boxCenter = new BoxLayout(center1, BoxLayout.Y_AXIS);
+	center1.setLayout(boxCenter);
+	dijalogSoftver.add(center1,BorderLayout.CENTER);
+    
+	Dimension d1 = new Dimension(610,20); // dimenzija kod teksta
+	Dimension d2 = new Dimension(250,20); // dimenzija kod selekcije
 	
+	JPanel pan1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 	
-    /*
-    JPanel center = new JPanel();
-	BoxLayout boxCenter = new BoxLayout(center, BoxLayout.Y_AXIS);
-	center.setLayout(boxCenter);
-	dijalogSoftver.add(center,BorderLayout.CENTER);
+	// Naziv sofvera
 	
-	Dimension d = new Dimension(300,30);
+	JLabel lblNazivSoftvera = new JLabel("Naziv Softvera:");
+	lblNazivSoftvera.setPreferredSize(d1);
+	String[] NazivSoftvera= {"3dsMax","ZBrush","Blender","Photoshop"};
+    JComboBox<String> cbNazivSoftvera = new JComboBox<String>(NazivSoftvera);
+    cbNazivSoftvera.setVisible(true);
+    cbNazivSoftvera.setPreferredSize(d2);
+	pan1.add(lblNazivSoftvera);
+	pan1.add(cbNazivSoftvera);
+    
+    // Cetkica
 	
-	// Naziv
+	JLabel lblNazivCet=new JLabel("Naziv cetkice:");
+    lblNazivCet.setPreferredSize(d1);
+    String[] NazivCet= {"Standard","Deform","Move","Smooth"};
+    JComboBox<String> cbNazivCet = new JComboBox<String>(NazivCet);
+    cbNazivCet.setVisible(true);
+    cbNazivCet.setPreferredSize(d2);
+    pan1.add(lblNazivCet);
+	pan1.add(cbNazivCet);
+    
+	JLabel lblNamenaCet=new JLabel("Namena cetkice:");
+    lblNamenaCet.setPreferredSize(d1);
+    JTextField txtNamenaCet=new JTextField();
+    txtNamenaCet.setPreferredSize(d1);
+    pan1.add(lblNamenaCet);
+	pan1.add(txtNamenaCet);
 	
-	JPanel pan = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    JLabel lblNazivSoftvera = new JLabel("Naziv Softvera:");
-    lblNazivSoftvera.setPreferredSize(d);
-    JTextField txtNazivSoftvera = new JTextField();
-    txtNazivSoftvera.setPreferredSize(d);
-    pan.add(lblNazivSoftvera);
-    pan.add(txtNazivSoftvera);
+	JLabel lblBojaCet=new JLabel("Boja cetkice:");
+    lblBojaCet.setPreferredSize(d1);
+    JColorChooser BojaCet = new JColorChooser();
+    pan1.add(lblBojaCet);
+	pan1.add(BojaCet);
 	
-	// CETKICE
-    // Bilo bi dobro neki vizuelni razmak u dijalogu napraviti
-	    
 	// Fajl format
 	
-    JLabel lblFormat = new JLabel("Fajl format:");
-    lblFormat.setPreferredSize(d);
-    JTextField txtFormat = new JTextField();
-    txtFormat.setPreferredSize(d);
-    pan.add(lblFormat);
-    pan.add(txtFormat);
-    
+	JLabel lblFajlFormat=new JLabel("Fajl format:");
+    lblFajlFormat.setPreferredSize(d1);
+    String[] FajlFormat= {".max",".fbx",".obj",".psd",".jpg",".png"};
+    JComboBox<String> cbFajlFormat = new JComboBox<String>(FajlFormat);
+    cbFajlFormat.setVisible(true);
+    cbFajlFormat.setPreferredSize(d2);
+    pan1.add(lblFajlFormat);
+	pan1.add(cbFajlFormat);
+	
 	// Alati
+	
+	JLabel lblAlati=new JLabel("Alati:");
+	lblAlati.setPreferredSize(d1);
+	String[] Alati = {"Mirror","Cut","Move","Clone"};
+    JComboBox<String> cbAlati = new JComboBox<String>(Alati);
+    cbAlati.setVisible(true);
+    cbAlati.setPreferredSize(d2);
+	pan1.add(lblAlati);
+	pan1.add(cbAlati);
     
-    JLabel lblAlati = new JLabel("Alati:");
-    lblAlati.setPreferredSize(d);
-    JTextField txtAlati = new JTextField();
-    txtAlati.setPreferredSize(d);
-    pan.add(lblAlati);
-    pan.add(txtAlati);
+	 // Modifikator
+	
+	JLabel lblModifikator=new JLabel("Modifikator:");
+	lblModifikator.setPreferredSize(d1);
+	String[] Modifikator = {"Bend","Chamfer","Lattice","Melt","Displace","FFD","HSDS","Ripple"};
+    JComboBox<String> cbModifikator = new JComboBox<String>(Modifikator);
+    cbModifikator.setVisible(true);
+    cbModifikator.setPreferredSize(d2);
+	pan1.add(lblModifikator);
+	pan1.add(cbModifikator);
+	
+    // Render
+	
+	JLabel lblMaterijali=new JLabel("Materijal:");
+	lblMaterijali.setPreferredSize(d1);
+	JTextField txtMaterijali=new JTextField();
+	txtMaterijali.setPreferredSize(d1);
+	pan1.add(lblMaterijali);
+	pan1.add(txtMaterijali);
+	
+	JLabel lblKamera=new JLabel("Kamera:");
+	lblKamera.setPreferredSize(d1);
+	String[] Kamera= {"Top","Front","Left","Perspektiva"};
+    JComboBox<String> cbKamera = new JComboBox<String>(Kamera);
+    cbKamera.setVisible(true);
+    cbKamera.setPreferredSize(d2);
+    pan1.add(lblKamera);
+	pan1.add(cbKamera);
+	
+	JLabel lblObjekti=new JLabel("Objekti:");
+	lblObjekti.setPreferredSize(d1);
+	JTextField txtObjekti=new JTextField();
+	txtObjekti.setPreferredSize(d1);
+	pan1.add(lblObjekti);
+	pan1.add(txtObjekti);
+
+	JLabel lblSvetlo=new JLabel("Svetlo:");
+    lblSvetlo.setPreferredSize(d1);
+    String[] Svetlo= {"Plane light","Disc light","Sphere light","Mesh light", "Dome light"};
+    JComboBox<String> cbSvetlo = new JComboBox<String>(Svetlo);
+    cbSvetlo.setVisible(true);
+    cbSvetlo.setPreferredSize(d2);
     
+    pan1.add(lblSvetlo);
+	pan1.add(cbSvetlo);
+    	
+	center1.add(pan1);
 	
-	// RENDER
-    // Bilo bi dobro neki vizuelni razmak u dijalogu napraviti
+	// OK
 	
+	JPanel bottom1=new JPanel();
+	BoxLayout box1=new BoxLayout(bottom1, BoxLayout.X_AXIS); 
+	bottom1.setLayout(box1);
+	dijalogSoftver.add(bottom1,BorderLayout.PAGE_END);
 	
+	JButton btnOk1=new JButton("Ok");
+	btnOk1.setPreferredSize(new Dimension(70,30));
+	bottom1.add(Box.createGlue());
+	bottom1.add(btnOk1);
+	
+	bottom1.add(Box.createRigidArea(new Dimension(275,40)));
 	
 	dijalogSoftver.setResizable(false);
 	dijalogSoftver.setVisible(true); 
-	pack();*/
-    
+	pack();
+	
 }
 }

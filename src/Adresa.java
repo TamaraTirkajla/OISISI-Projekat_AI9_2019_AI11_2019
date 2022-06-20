@@ -38,6 +38,6 @@ public class Adresa {
 	
 	@Override
 	public String toString() {
-	return "\nUlica:"+this.Ul+"\nBroj:"+this.Br+"\nGrad: "+this.Gr;
+		return Ul + " " + Br + ", " + Gr;
 	}
 }

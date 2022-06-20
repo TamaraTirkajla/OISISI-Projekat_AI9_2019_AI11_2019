@@ -1,14 +1,15 @@
 
 import java.awt.Color;
+import java.util.List;
 
 public class Cetkica {
-	private String NazivCet;
+	private List<String> NazivCet;
 	private String Namena;
 	private Color Boja;
 	
 	// Seteri
 	
-	public void setNazivCet(String nazivCet) {
+	public void setNazivCet(List<String> nazivCet) {
 	this.NazivCet = nazivCet;
 	}
 	public void setNamena(String namena) {
@@ -20,7 +21,7 @@ public class Cetkica {
 	
 	// Geteri
 	
-	public String getNazivCet() {
+	public List<String> getNazivCet() {
 	return NazivCet;
 	}
 	public String getNamena() {
@@ -32,14 +33,16 @@ public class Cetkica {
 	
 	// Cetkica
 	
-	public Cetkica(String nazivCet, String namena, Color boja) {
+	public Cetkica(List<String> nazivCet, String namena, Color boja) {
 	this.NazivCet = nazivCet;
 	this.Namena = namena;
 	this.Boja = boja;
 	}
 	
+	/*
 	@Override
 	public String toString() {
 	return "\nNaziv cetkice:"+this.NazivCet+"\nNamena:"+this.Namena+"\nBoja: "+this.Boja;
 	}
+	*/
 }
