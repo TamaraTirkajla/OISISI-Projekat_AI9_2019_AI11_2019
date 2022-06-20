@@ -102,9 +102,9 @@ class Frame extends JFrame {
 		
 		JTabbedPane tabs = new JTabbedPane();
 		tabs.setBackground(Color.WHITE);
-			
-		
-		/*MOZDA JE BOLJE OVO RESITI SA PANELOM A NE TABELOM
+
+		// ASISTENT KAZE DA JE LAKSE POPUNITI TABOVE SA PANELIMA NEGO SA TABELOM			
+
 		// Tab zaposleni
 		
 		String[] koloneZ = {"Ime:", 
@@ -144,48 +144,33 @@ class Frame extends JFrame {
 	        };
 	    };
 	    JScrollPane scrollPZaposleni = new JScrollPane(TabelaZaposleni);
+	    
 		tabs.addTab("Zaposleni", scrollPZaposleni);
 		p.add(tabs, BorderLayout.CENTER);
-		
-		
+				
 		// Tab softveri
 		
 		String[] redoviS = {"Naziv Softvera:", 
-				"Naziv cetkice:",
-				"Namena cetkice:",
-				"Boja cetkice:",
+				"Naziv, namena i boja cetkice:",
 				"Fajl format:",
 				"Alati:",
 				"Modifikatori:",
-				"Materijal:",
-				"Kamera:",
-				"Objekti:",
-				"Svetlo:"
+				"Materijal, kamera, objekti i svetlo:"
 				};
 		Object[][] podaciS = {
 				{"ZBrush", 
-				"Standard",
-				"Dodavanje mase",
-				"Lilava",
+				"Standard, Dodavanje mase, Crvena",
 				".max",
 				"Cut",
 				"Bend",
-				"Staklo",
-				"Top",
-				"prozor2",
-				"Plane light"
+				"Staklo, Top, Model1, Plane light"
 				},
 				{"PhotoShop", 
-				"Deform",
-				"Iscrtavanje",
-				"Crna",
+				"Deform, Iscrtavanje, Crna",
 				".psd",
 				"Mirror",
 				"Chamfer",
-				"Staklo",
-				"Front",
-				"glava1",
-				"Disc light"
+				"Staklo, Front, Model2, Disc light"
 				},
 				};
 		
@@ -198,8 +183,6 @@ class Frame extends JFrame {
 	    JScrollPane scrollPSoftver = new JScrollPane(TabelaSoftver);
 		tabs.addTab("Sofver", scrollPSoftver);
 		p.add(tabs, BorderLayout.CENTER);
-	*/
-
 }}
 
 // Kreiranje Menu Bar-a
