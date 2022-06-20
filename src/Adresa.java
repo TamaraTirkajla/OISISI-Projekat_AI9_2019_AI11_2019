@@ -35,9 +35,9 @@ public class Adresa {
 	this.Ul = ul;
 	this.Gr = gr;
 	}
-
+	
 	@Override
 	public String toString() {
-	return Ul + " " + Br + "," + Gr ;
+	return "\nUlica:"+this.Ul+"\nBroj:"+this.Br+"\nGrad: "+this.Gr;
 	}
 }

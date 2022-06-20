@@ -81,6 +81,7 @@ public PROZORNoviSoftver(){
 	}
     
 	
+	
     /*
     JPanel center = new JPanel();
 	BoxLayout boxCenter = new BoxLayout(center, BoxLayout.Y_AXIS);
