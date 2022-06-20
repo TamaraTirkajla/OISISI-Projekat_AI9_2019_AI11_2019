@@ -5,6 +5,7 @@ public class Softver {
 	private String FajlFormat;
 	private String Alati;
 	private Render Render;
+	private String Modifikator;
 	
 	// Seteri
 	
@@ -22,6 +23,9 @@ public class Softver {
 	}
 	public void setRender(Render render) {
 	this.Render = render;
+	}
+	public void setModifikator(String modifikator) {
+	this.Modifikator = modifikator;
 	}
 		
 	// Geteri
@@ -41,14 +45,24 @@ public class Softver {
 	public Render getRender() {
 	return Render;
 	}
+	public String getModifikator() {
+	return Modifikator;
+	}
 	
 	// Softver
 	
-	public Softver(String NazivSoft, Cetkica Cetkica, String FajlFormat, String Alati, Render Render) {
-	this.NazivSoft = NazivSoft;
-	this.Cetkica = Cetkica;
-	this.FajlFormat = FajlFormat;
-	this.Alati = Alati;
-	this.Render = Render;
+	public Softver(String nazivSoft, Cetkica cetkica, String fajlFormat, String alati, Render render, String modifikator) {
+	this.NazivSoft = nazivSoft;
+	this.Cetkica = cetkica;
+	this.FajlFormat = fajlFormat;
+	this.Alati = alati;
+	this.Render = render;
+	this.Modifikator = modifikator;
 	}
+	
+	@Override
+    public String toString() {
+        return "\nNaziv softvera:"+this.NazivSoft+"\nCetkica:"+this.Cetkica+"\nFajl format: "+this.FajlFormat+"\nAlati: "+
+        this.Alati+"\nRender:"+this.Render+"\nModifikator: "+this.Modifikator;
+    }
 }

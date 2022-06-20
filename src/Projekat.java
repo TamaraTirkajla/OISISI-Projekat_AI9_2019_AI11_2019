@@ -63,7 +63,7 @@ class Frame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Akcija pri zatvaranju prozora
 		setLocationRelativeTo(null); // PostavljenJFrame na centar ekrana
 		
-		//dodajemo Window Listener da bi se prikazao opcioni dijalog pri izlasku iz aplikacije
+		// dodajemo Window Listener da bi se prikazao opcioni dijalog pri izlasku iz aplikacije
 		addWindowListener(new WListener());
 		
 		// Kreiranje panela p

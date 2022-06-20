@@ -46,6 +46,6 @@ public class Render {
 	
 	@Override
 	public String toString() {
-	return Materijali + "," + Kamera + "," + Objekti + "," + Kamera ;
+	return "\nMaterijali:"+this.Materijali+"\nKamera:"+this.Kamera+"\nObjekti: "+this.Objekti+"\nNaziv rendera: "+this.NazivRend;
 	}
 }

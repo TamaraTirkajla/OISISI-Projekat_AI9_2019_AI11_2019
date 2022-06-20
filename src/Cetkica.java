@@ -8,14 +8,14 @@ public class Cetkica {
 	
 	// Seteri
 	
-	public void setNazivCet(String NazivCet) {
-	this.NazivCet = NazivCet;
+	public void setNazivCet(String nazivCet) {
+	this.NazivCet = nazivCet;
 	}
-	public void setNamena(String Namena) {
-	this.Namena = Namena;
+	public void setNamena(String namena) {
+	this.Namena = namena;
 	}
-	public void setBoja(Color Boja) {
-	this.Boja = Boja;
+	public void setBoja(Color boja) {
+	this.Boja = boja;
 	}
 	
 	// Geteri
@@ -32,14 +32,14 @@ public class Cetkica {
 	
 	// Cetkica
 	
-	public Cetkica(String NazivCet, String Namena, Color Boja) {
-	this.NazivCet = NazivCet;
-	this.Namena = Namena;
-	this.Boja = Boja;
+	public Cetkica(String nazivCet, String namena, Color boja) {
+	this.NazivCet = nazivCet;
+	this.Namena = namena;
+	this.Boja = boja;
 	}
 	
 	@Override
 	public String toString() {
-	return NazivCet + "," + Namena + "," + Boja ;
+	return "\nNaziv cetkice:"+this.NazivCet+"\nNamena:"+this.Namena+"\nBoja: "+this.Boja;
 	}
 }

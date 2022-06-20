@@ -9,6 +9,7 @@ public class Zaposleni {
 	private String Email;
 	private Adresa AdresaStanovanja;
 	private Softver Softver;
+	private String Pozicija;
 		
 	// Seteri
 	
@@ -32,6 +33,9 @@ public class Zaposleni {
 	}
 	public void setSoftver(Softver softver) {
 	this.Softver = softver;
+	}
+	public void setPozicija(String pozicija) {
+	this.Pozicija = pozicija;
 	}
 	
 	// Geteri
@@ -57,10 +61,13 @@ public class Zaposleni {
 	public Softver getSoftver() {
 	return Softver;
 	}
+	public String getPozicija() {
+	return Pozicija;
+	}
 	
 	// Zaposleni
 	
-	public Zaposleni(String ime, String prezime, String jmbg, LocalDate datumRodjenja, String email, Adresa adresaStanovanja, Softver softver) {
+	public Zaposleni(String ime, String prezime, String jmbg, LocalDate datumRodjenja, String email, Adresa adresaStanovanja, Softver softver, String pozicija) {
 	this.Ime = ime;
 	this.Prezime = prezime;
 	this.Jmbg = jmbg;
@@ -68,5 +75,12 @@ public class Zaposleni {
 	this.Email = email;
 	this.AdresaStanovanja = adresaStanovanja;
 	this.Softver = softver;
+	this.Pozicija = pozicija;
 	}
+	
+	@Override
+    public String toString() {
+        return "\nIme: "+this.Ime+"\nPrezime:"+this.Prezime+"\nJmbg: "+this.Jmbg+"\nDatum rodjenja:"+
+        this.DatumRodjenja+"\nEmail: "+this.Email+"\nAdresa stanovanja: "+this.AdresaStanovanja+"\nSoftver: "+this.Softver+"\nPozicija: "+this.Pozicija;
+    }
 }
