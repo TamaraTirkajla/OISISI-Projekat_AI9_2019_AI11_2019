@@ -12,6 +12,7 @@ public class SDialog extends JDialog {
 		setSize(250, 250);
 		setLocationRelativeTo(parent);
 
+		FLPanel flPanel = new FLPanel();
+		this.add(flPanel);
 	}
-
 }

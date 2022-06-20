@@ -1,3 +1,4 @@
+
 public class Render {
 	private String Materijali;
 	private String Kamera;
