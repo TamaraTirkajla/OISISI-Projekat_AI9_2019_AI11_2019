@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class PROZORNoviSoftver extends JFrame  {
 
@@ -147,19 +150,32 @@ public PROZORNoviSoftver(){
     	
 	center1.add(pan1);
 	
-	// OK
+	// Dugmici
 	
 	JPanel bottom1=new JPanel();
 	BoxLayout box1=new BoxLayout(bottom1, BoxLayout.X_AXIS); 
 	bottom1.setLayout(box1);
 	dijalogSoftver.add(bottom1,BorderLayout.PAGE_END);
-	
+		
+	// Ok
+		
 	JButton btnOk1=new JButton("Ok");
-	btnOk1.setPreferredSize(new Dimension(70,30));
+	btnOk1.setPreferredSize(new Dimension(90,30));
 	bottom1.add(Box.createGlue());
 	bottom1.add(btnOk1);
-	
-	bottom1.add(Box.createRigidArea(new Dimension(275,40)));
+		
+	// Cancel
+		
+	JButton btnCancel1 = new JButton("Cancel");
+	btnCancel1.setPreferredSize(new Dimension(90,30));
+	bottom1.add(Box.createGlue());
+	bottom1.add(btnCancel1);
+	btnCancel1.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent arg0) {
+        	dijalogSoftver.dispatchEvent(new WindowEvent(frameSoftver, WindowEvent.WINDOW_CLOSING)); }
+    });
+		
+	bottom1.add(Box.createRigidArea(new Dimension(150,40)));
 	
 	dijalogSoftver.setResizable(false);
 	dijalogSoftver.setVisible(true); 

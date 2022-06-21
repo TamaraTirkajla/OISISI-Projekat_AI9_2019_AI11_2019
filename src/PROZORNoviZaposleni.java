@@ -4,7 +4,10 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JCheckBox;
 import javax.swing.Box;
@@ -162,19 +165,32 @@ public PROZORNoviZaposleni() {
 	
 	center2.add(pan2);
 
-	// OK
+	// Dugmici
 	
 	JPanel bottom2=new JPanel();
 	BoxLayout box2=new BoxLayout(bottom2, BoxLayout.X_AXIS); 
 	bottom2.setLayout(box2);
 	dijalogZaposleni.add(bottom2,BorderLayout.PAGE_END);
-		
+	
+	// Ok
+	
 	JButton btnOk2=new JButton("Ok");
-	btnOk2.setPreferredSize(new Dimension(70,30));
+	btnOk2.setPreferredSize(new Dimension(90,30));
 	bottom2.add(Box.createGlue());
 	bottom2.add(btnOk2);
+	
+	// Cancel
+	
+	JButton btnCancel2 = new JButton("Cancel");
+	btnCancel2.setPreferredSize(new Dimension(90,30));
+	bottom2.add(Box.createGlue());
+	bottom2.add(btnCancel2);
+	btnCancel2.addActionListener(new ActionListener() {
+	public void actionPerformed(ActionEvent arg0) {
+	dijalogZaposleni.dispatchEvent(new WindowEvent(frameZaposleni, WindowEvent.WINDOW_CLOSING)); }
+	});
 		
-	bottom2.add(Box.createRigidArea(new Dimension(275,40)));
+	bottom2.add(Box.createRigidArea(new Dimension(150,40)));
 		
 	dijalogZaposleni.setResizable(false);
 	dijalogZaposleni.setVisible(true); 
