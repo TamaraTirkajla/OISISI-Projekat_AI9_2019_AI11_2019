@@ -260,6 +260,7 @@ class MyMenuBar extends JMenuBar {
 		// Help
 		JMenu help = new JMenu("Help");
 		JMenuItem miAbout = new JMenuItem("About",new ImageIcon("ikonice/menubar_about_25.png"));
+		//AKcija koja se izvrsi klikom na opciju About
 		miAbout.addActionListener(new ActionListener() {
 			
 		@Override

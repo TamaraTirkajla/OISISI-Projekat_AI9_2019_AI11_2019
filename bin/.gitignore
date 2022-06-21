@@ -11,6 +11,8 @@
 /HDialog.class
 /KLPanel.class
 /KListener.class
+/KListenerDatum.class
+/KListenerJMBG.class
 /MLPanel.class
 /MListener1.class
 /MListener2.class
@@ -28,6 +30,3 @@
 /Softver.class
 /WListener.class
 /Zaposleni.class
-/KListenerJMBG.class
-/KListenerDatum.class
-/CtrlZaposleni.class
