@@ -57,11 +57,13 @@ public class Softver {
 	return Modifikator;
 	}
 	
+	// Reference za StringBuilder
+	// https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
+	// https://www.javatpoint.com/StringBuilder-class
 	public String dobaviNaziveCetkica() {
 		StringBuilder sb = new StringBuilder();
 		for (Cetkica cetkica : Cetkice) {
 			sb.append(cetkica.getNazivCet() + ";");
-			
 		}
 		return sb.toString();
 	}
@@ -70,13 +72,13 @@ public class Softver {
 		StringBuilder sb = new StringBuilder();
 		for (String alat : Alati) {
 			sb.append(alat + ";");
-			
 		}
 		return sb.toString();
 	}
 	
 	// Softver
-	
+	// Reference za super() - Call the superclass method
+	// https://www.w3schools.com/java/ref_keyword_super.asp
 	public Softver(long id, String nazivSoft, List<Cetkica> cetkice, String fajlFormat, List<String> alati, Render render, String modifikator) {
 	super();
 	this.Id = id;

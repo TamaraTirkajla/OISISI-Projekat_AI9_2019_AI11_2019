@@ -38,5 +38,4 @@ public class Cetkica {
 	this.Namena = namena;
 	this.Boja = boja;
 	}	
-
 }

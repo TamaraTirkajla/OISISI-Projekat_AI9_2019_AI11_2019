@@ -26,6 +26,7 @@ public class GlavniFrame extends JFrame{
 	JTabbedPane tabs;
 	
 	public GlavniFrame() {
+		//deo koda uradjen po uzoru na vezbe - Termin 3
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		int screenHeight = screenSize.height;
@@ -45,7 +46,7 @@ public class GlavniFrame extends JFrame{
 		p.setLayout(new BorderLayout());
 		this.add(p, BorderLayout.CENTER); 
 
-		// Dodavanje Menu Bar-a
+		// Dodavanje MenuBar-a
 		
 		MeniBar menu = new MeniBar();
 		this.setJMenuBar(menu);
@@ -56,7 +57,7 @@ public class GlavniFrame extends JFrame{
 		toolbar.setBackground(Color.WHITE);
 		this.add(toolbar, BorderLayout.NORTH); 
 		
-		// Kreiranje Status Bar-a sa Datumom 
+		// Kreiranje Status Bar-a sa datumom 
 
 		// deo koda preuzet sa sajta stackoverflow.com
 		// link: https://stackoverflow.com/questions/3035880/how-can-i-create-a-bar-in-the-bottom-of-a-java-app-like-a-status-bar
@@ -76,14 +77,11 @@ public class GlavniFrame extends JFrame{
 		StatusBar.add(Box.createRigidArea(new Dimension(10,0)));
 		
 		// Tabovi
-		
+		//Tabovi su radjeni po uzoru sa vezbi
 		tabs = new JTabbedPane();
-		tabs.setBackground(Color.WHITE);
+		tabs.setBackground(Color.WHITE);			
 
-		// ASISTENT KAZE DA JE LAKSE POPUNITI TABOVE SA PANELIMA NEGO SA TABELOM			
-
-		// Tab zaposleni
-		
+		// Tab Zaposleni
 		
 		String[] koloneZ = {"Ime:", 
 				"Prezime:",
@@ -95,7 +93,6 @@ public class GlavniFrame extends JFrame{
 				"Pozicija:"
 				};
 		
-
 		List<Zaposleni> zaposleni = kontrolerZaposleni.dobaviZaposlene();
 		
 		DefaultTableModel modelZaposleni = new DefaultTableModel(koloneZ, 0);
@@ -103,7 +100,6 @@ public class GlavniFrame extends JFrame{
 			modelZaposleni.addRow( new String[] {zaposlen.getIme(), zaposlen.getPrezime(), zaposlen.getJmbg(), zaposlen.getDatumRodjenja(), zaposlen.getAdresaStanovanjaFull(), zaposlen.getEmail(), zaposlen.getSoftver().getNazivSoft(),zaposlen.getPozicija()});
 		}
 
-		
 		JTable TabelaZaposleni = new JTable() {
 	        
 	        public boolean isCellEditable(int row, int column) {    
@@ -116,14 +112,14 @@ public class GlavniFrame extends JFrame{
 		tabs.addTab("Zaposleni", scrollPZaposleni);
 		p.add(tabs, BorderLayout.CENTER);
 				
-		// Tab softveri
+		// Tab Softveri
 		
 		String[] redoviS = {"Naziv Softvera:", 
 				"Naziv, namena i boja cetkice:",
 				"Fajl format:",
 				"Alati:",
 				"Modifikatori:",
-				"Materijal, kamera, objekti i svetlo:"
+				"Render:"
 				};
 		
 		List<Softver> softveri = kontrolerSoftver.dobaviSoftvere();
@@ -132,6 +128,7 @@ public class GlavniFrame extends JFrame{
 		for (Softver softver : softveri) {
 			modelSoftver.addRow( new String[] {softver.getNazivSoft(), softver.dobaviNaziveCetkica(), softver.getFajlFormat(), softver.dobaviNaziveAlata(), softver.getModifikator(), softver.getRender().getNaziv()});
 		}
+		
 		JTable TabelaSoftver = new JTable() {
 	        
 	        public boolean isCellEditable(int row, int column) {    

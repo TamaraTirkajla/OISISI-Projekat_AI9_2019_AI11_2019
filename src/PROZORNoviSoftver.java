@@ -81,12 +81,12 @@ public class PROZORNoviSoftver extends JFrame  {
     lblNamenaCet.setPreferredSize(d1);
     JTextField txtNamenaCet=new JTextField();
     txtNamenaCet.setPreferredSize(d1);
+    //delovi sa KeyListener-ima su uradjeni po primeru sa vezbi - Termin 4
     txtNamenaCet.addKeyListener(new KeyListener() {
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -94,13 +94,11 @@ public class PROZORNoviSoftver extends JFrame  {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
     pan1.add(lblNamenaCet);
@@ -156,21 +154,18 @@ public class PROZORNoviSoftver extends JFrame  {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
 		public void keyReleased(KeyEvent e) {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
-    		System.out.println(str);
-			
+    		System.out.println(str);	
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
+			// TODO Auto-generated method stub	
 		}
 	});
 	
@@ -195,7 +190,6 @@ public class PROZORNoviSoftver extends JFrame  {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -203,13 +197,11 @@ public class PROZORNoviSoftver extends JFrame  {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
 	pan1.add(lblObjekti);
@@ -257,6 +249,5 @@ public class PROZORNoviSoftver extends JFrame  {
 	dijalogSoftver.setResizable(false);
 	dijalogSoftver.setVisible(true); 
 	pack();
-	
-}
+    }
 }

@@ -3,6 +3,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+//reference za kreiranje Model View Controller arhitekture
+//https://www.javatpoint.com/mvc-architecture-in-java
+//https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm
+//https://www.youtube.com/watch?v=dTVVa2gfht8
+//https://www.edureka.co/blog/mvc-architecture-in-java/
+
 public class KontrolerSoftver {
 
 	private static KontrolerSoftver instance = null;
@@ -22,7 +28,9 @@ public class KontrolerSoftver {
 		    Softver softver = new Softver( id, nazivSoft,  cetkice,  fajlFormat,  alati,  render,  modifikator);
 		    bazaSoftver.dodajSoftver(softver);
 		}
-		
+
+		// reference za ConifrmDialog
+		// https://mkyong.com/swing/java-swing-how-to-make-a-confirmation-dialog/
 		public void izbrisiSoftver(int index) {			
 			int input = JOptionPane.showConfirmDialog(null,
 						    "Jeste sigurni da zelite obrisati softver?", "Potvrda", 

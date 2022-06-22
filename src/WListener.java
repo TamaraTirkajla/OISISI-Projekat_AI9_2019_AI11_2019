@@ -8,16 +8,15 @@ import javax.swing.WindowConstants;
 
 public class WListener implements WindowListener {
 
+	//kod uradjen po uzoru sa vezbi - Termin 4
 	@Override
 	public void windowActivated(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void windowClosed(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -30,31 +29,25 @@ public class WListener implements WindowListener {
 		} else {
 			frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		}
-
 	}
 
 	@Override
 	public void windowDeactivated(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void windowDeiconified(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void windowIconified(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void windowOpened(WindowEvent arg0) {
 		// TODO Auto-generated method stub
-
 	}
-
 }

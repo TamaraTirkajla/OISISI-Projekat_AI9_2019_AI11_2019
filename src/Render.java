@@ -52,7 +52,9 @@ public class Render {
 	}
 	
 	// Render
-	
+	// Reference za super() - Call the superclass method
+	// https://www.w3schools.com/java/ref_keyword_super.asp
+	// https://docs.oracle.com/javase/tutorial/java/IandI/super.html
 	public Render(String naziv, List<String> materijali, List<String> kamere,String svetlo,  List<String> objekti ) {
 	super();
 	this.Naziv = naziv;
@@ -61,7 +63,4 @@ public class Render {
 	this.Objekti = objekti;
 	this.Svetlo = svetlo;
 	}
-	
-	
 }
-

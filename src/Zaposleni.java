@@ -14,7 +14,7 @@ public class Zaposleni {
 		
 	// Seteri
 	
-	public void setId(long id) {		//NOVO
+	public void setId(long id) {
 	this.Id = id;
 	}
 	public void setIme(String ime) {
@@ -76,7 +76,9 @@ public class Zaposleni {
 		return AdresaStanovanja.getUl() + " " + AdresaStanovanja.getBr() + " " + AdresaStanovanja.getGr() ;
 		}
 	// Zaposleni
-	
+	// Reference za super() - Call the superclass method
+	// https://www.w3schools.com/java/ref_keyword_super.asp
+	// https://docs.oracle.com/javase/tutorial/java/IandI/super.html
 	public Zaposleni(long id,String ime, String prezime, String jmbg, String datumRodjenja, String email, Adresa adresaStanovanja, Softver softver, String pozicija) {
 	super();
 	this.Id = id;

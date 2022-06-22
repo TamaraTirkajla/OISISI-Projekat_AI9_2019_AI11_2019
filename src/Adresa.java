@@ -29,7 +29,8 @@ public class Adresa {
 	}
 	
 	// Adresa
-	
+	// Reference za super() - Call the superclass method
+	// https://www.w3schools.com/java/ref_keyword_super.asp
 	public Adresa(String br, String ul, String gr) {
 	super();
 	this.Br = br;
@@ -37,6 +38,8 @@ public class Adresa {
 	this.Gr = gr;
 	}
 	
+	// Reference za @Override - Call the superclass method
+	// https://beginnersbook.com/2014/07/override-annotation-in-java/
 	@Override
 	public String toString() {
 		return Ul + " " + Br + ", " + Gr;

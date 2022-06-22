@@ -26,7 +26,6 @@ import javax.swing.WindowConstants;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-
 public class PROZORNoviZaposleni extends JFrame {
 
 	public static PROZORNoviZaposleni instance = null;
@@ -64,12 +63,12 @@ public PROZORNoviZaposleni() {
     lblIme.setPreferredSize(d3);
     JTextField txtIme=new JTextField();
     txtIme.setPreferredSize(d3);
+    //delovi sa KeyListener-ima su uradjeni po primeru sa vezbi - Termin 4
     txtIme.addKeyListener(new KeyListener() {
 		
 		@Override
 		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
+			// TODO Auto-generated method stub	
 		}
 		
 		@Override
@@ -77,13 +76,11 @@ public PROZORNoviZaposleni() {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
+			// TODO Auto-generated method stub	
 		}
 	});
     pan2.add(lblIme);
@@ -100,7 +97,6 @@ public PROZORNoviZaposleni() {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -108,13 +104,11 @@ public PROZORNoviZaposleni() {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
 	
@@ -154,7 +148,6 @@ public PROZORNoviZaposleni() {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -162,13 +155,11 @@ public PROZORNoviZaposleni() {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
 	
@@ -186,7 +177,6 @@ public PROZORNoviZaposleni() {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -194,13 +184,11 @@ public PROZORNoviZaposleni() {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
 	
@@ -218,7 +206,6 @@ public PROZORNoviZaposleni() {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -226,13 +213,11 @@ public PROZORNoviZaposleni() {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
 	
@@ -250,7 +235,6 @@ public PROZORNoviZaposleni() {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 		
 		@Override
@@ -258,13 +242,11 @@ public PROZORNoviZaposleni() {
 			JTextField txt = (JTextField) e.getComponent();
     		String str = txt.getText();
     		System.out.println(str);
-			
 		}
 		
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 	});
 	

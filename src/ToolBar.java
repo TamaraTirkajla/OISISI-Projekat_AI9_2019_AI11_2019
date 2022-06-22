@@ -9,6 +9,7 @@ import javax.swing.SwingConstants;
 public class ToolBar extends JToolBar{
 
 	public ToolBar() {
+		//deo koda preuzet sa vezbi - Termin 3
 		super(SwingConstants.HORIZONTAL);
 		JButton btnNew = new JButton();
 		btnNew.setToolTipText("New");

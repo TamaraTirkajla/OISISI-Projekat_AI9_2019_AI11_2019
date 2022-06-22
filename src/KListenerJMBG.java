@@ -7,9 +7,10 @@ import javax.swing.JTextField;
 
 public class KListenerJMBG implements KeyListener {
 
+	//uradjeno po ugledu na vezbe - Termin 4 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		// ako je action key, ne vrsi se provera
+	
 		if (arg0.isActionKey() || arg0.getKeyCode() == KeyEvent.VK_ENTER
 				|| arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
 			return;
@@ -19,12 +20,11 @@ public class KListenerJMBG implements KeyListener {
 			JOptionPane.showMessageDialog(null, "JMBG ne moze imati vise od 13 cifara");
 			txt.setText(txt.getText().substring(0, 13));
 		}
-
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
-		// ako je action key, ne vrsi se provera
+		
 		if (arg0.isActionKey() || arg0.getKeyCode() == KeyEvent.VK_ENTER
 				|| arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
 			return;
@@ -45,5 +45,4 @@ public class KListenerJMBG implements KeyListener {
 	public void keyTyped(KeyEvent arg0) {
 
 	}
-
 }

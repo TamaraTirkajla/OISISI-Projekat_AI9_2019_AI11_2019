@@ -13,6 +13,7 @@ import javax.swing.JTextArea;
 public class MeniBar extends JMenuBar{
 
 	public MeniBar() {
+		//deo koda uradjen po ugledu sa vezbi - Termin3
 		// File
 		JMenu file = new JMenu("File");
 		
@@ -49,6 +50,8 @@ public class MeniBar extends JMenuBar{
 		JMenuItem miZaposleni = new JMenuItem("Zaposleni", new ImageIcon ("ikonice/menubar_zaposleni_25.png"));
 		miZaposleni.addActionListener(new ActionListener() {
 			
+			// referenca za metode setSelectedIndex() i getSelectedIndex()
+			//https://stackoverflow.com/questions/4157293/how-to-switch-tabs-in-jtabbedpane-by-clicking-a-button
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int i = GlavniFrame.getInstance().getTab().getSelectedIndex();
@@ -80,10 +83,10 @@ public class MeniBar extends JMenuBar{
 		JMenuItem miExit = new JMenuItem("Exit", new ImageIcon("ikonice/menubar_exit_25.png"));
 		miExit.addActionListener(new ActionListener() {
 			
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
-		}
+			}
 		});
 
 		file.add(miNew);
@@ -107,8 +110,8 @@ public class MeniBar extends JMenuBar{
 		//Akcija koja se izvrsi klikom na opciju About
 		miAbout.addActionListener(new ActionListener() {
 			
-		@Override
-		public void actionPerformed(ActionEvent e) {
+			@Override
+			public void actionPerformed(ActionEvent e) {
 			
 			// kod preuzet sa sajta
 			//https://www.sanfoundry.com/java-program-display-some-text-frame-help-label/

@@ -9,7 +9,9 @@ public class BazaZaposleni {
 	private static BazaZaposleni instance = null;
 	
 	public static List<Zaposleni > listaZaposleni  = new ArrayList<Zaposleni>();
-	
+
+	// referenca za getInstance()
+	// https://stackoverflow.com/questions/24214148/java-getinstance-vs-static
 	public static BazaZaposleni getInstance() {
 		if (instance == null) {
 			instance = new BazaZaposleni();
@@ -54,6 +56,9 @@ public class BazaZaposleni {
 		return listaZaposleni;
 	}
 	
+	// referenca za for (Zaposleni zaposleni : listaZaposleni) - iterating through the array
+	// https://www.programiz.com/java-programming/for-loop
+	// https://www.w3schools.com/java/java_arrays_loop.asp
 	public Zaposleni nadjiZaposlenogPoJmbg(String jmbg) {
 		for (Zaposleni zaposleni : listaZaposleni) {
 			if (zaposleni.getJmbg() == jmbg )
@@ -78,6 +83,9 @@ public class BazaZaposleni {
 			}
 		}
 	
+	// referenca za getValueAt
+	// http://www.java2s.com/Code/JavaAPI/javax.swing/JTablegetValueAtintrowintcolumn.htm
+	// https://docs.oracle.com/javase/7/docs/api/javax/swing/JTable.html
 	public Object getValueAt(int row, int column) {
 		Zaposleni zaposleni;
 		zaposleni = listaZaposleni.get(row);
@@ -100,8 +108,7 @@ public class BazaZaposleni {
 			return zaposleni.getPozicija();
 		default:
 		return null;
-	}
-	}
 	
-	
+		}
+	}
 }
