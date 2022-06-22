@@ -2,25 +2,25 @@ import java.util.List;
 
 public class Softver {
 	private long Id;
-	private List<String> NazivSoft;
-	private Cetkica Cetkica;
-	private List<String> FajlFormat;
+	private String NazivSoft;
+	private List<Cetkica> Cetkice;
+	private String FajlFormat;
 	private List<String> Alati;
 	private Render Render;
-	private List<String> Modifikator;
+	private String Modifikator;
 	
 	// Seteri
 	
 	public void setId(long id) {
 	this.Id = id;
 	}
-	public void setNazivSoft(List<String> nazivSoft) {
+	public void setNazivSoft(String nazivSoft) {
 	this.NazivSoft = nazivSoft;
 	}
-	public void setCetkica(Cetkica cetkica) {
-	this.Cetkica = cetkica;
+	public void setCetkice(List<Cetkica> cetkice) {
+	this.Cetkice = cetkice;
 	}
-	public void setFajlFormat(List<String> fajlFormat) {
+	public void setFajlFormat(String fajlFormat) {
 	this.FajlFormat = fajlFormat;
 	}
 	public void setAlati(List<String> alati) {
@@ -29,7 +29,7 @@ public class Softver {
 	public void setRender(Render render) {
 	this.Render = render;
 	}
-	public void setModifikator(List<String> modifikator) {
+	public void setModifikator(String modifikator) {
 	this.Modifikator = modifikator;
 	}
 		
@@ -38,13 +38,13 @@ public class Softver {
 	public long getId() {
 	return Id;
 	}
-	public List<String> getNazivSoft() {
+	public String getNazivSoft() {
 	return NazivSoft;
 	}
-	public Cetkica getCetkica() {
-	return Cetkica;
+	public List<Cetkica> getCetkice() {
+	return Cetkice;
 	}
-	public List<String> getFajlFormat() {
+	public String getFajlFormat() {
 	return FajlFormat;
 	}
 	public List<String> getAlati() {
@@ -53,17 +53,35 @@ public class Softver {
 	public Render getRender() {
 	return Render;
 	}
-	public List<String> getModifikator() {
+	public String getModifikator() {
 	return Modifikator;
+	}
+	
+	public String dobaviNaziveCetkica() {
+		StringBuilder sb = new StringBuilder();
+		for (Cetkica cetkica : Cetkice) {
+			sb.append(cetkica.getNazivCet() + ";");
+			
+		}
+		return sb.toString();
+	}
+	
+	public String dobaviNaziveAlata() {
+		StringBuilder sb = new StringBuilder();
+		for (String alat : Alati) {
+			sb.append(alat + ";");
+			
+		}
+		return sb.toString();
 	}
 	
 	// Softver
 	
-	public Softver(long id,List<String> nazivSoft, Cetkica cetkica, List<String> fajlFormat, List<String> alati, Render render, List<String> modifikator) {
+	public Softver(long id, String nazivSoft, List<Cetkica> cetkice, String fajlFormat, List<String> alati, Render render, String modifikator) {
 	super();
 	this.Id = id;
 	this.NazivSoft = nazivSoft;
-	this.Cetkica = cetkica;
+	this.Cetkice = cetkice;
 	this.FajlFormat = fajlFormat;
 	this.Alati = alati;
 	this.Render = render;

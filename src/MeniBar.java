@@ -118,7 +118,7 @@ public class MeniBar extends JMenuBar{
 			frameAbout.setLayout(new FlowLayout());
 		    String text = "Fakultet tehnickih nauka je jedna od najsavremenije organizovanih visokoobrazovnih"  + "\n" 
 		        + "institucija u regionu sa tradicijom dugom preko sest decenija, poznat i priznat u celom"  + "\n"
-		        + "svetu, a inzenjeri obrazovani na ovom Fakultetu, rade i postižu zapazene rezultate"  + "\n"
+		        + "svetu, a inzenjeri obrazovani na ovom Fakultetu, rade i postizu zapazene rezultate"  + "\n"
 		        + "u svakom preduzecu koje ima veze sa tehnologijom, proizvodnjom ili obrazovanjem,"  + "\n"
 		        + "jer od svih zanimanja koja se u nasoj zemlji obrazuju, tehnika je i dalje najtrazenija."  + "\n"
 		       
@@ -153,10 +153,10 @@ public class MeniBar extends JMenuBar{
 		        + "\n" 
 		        
 		        + "Stalne inovacije nastavnog procesa imaju za rezultat visoku spremnost nasih inzenjera"  + "\n"
-		        + "za resavanje konkretnih poslovnih problema. Fakultet je prvi u bivšoj Jugoslaviji,"  + "\n"
+		        + "za resavanje konkretnih poslovnih problema. Fakultet je prvi u bivsoj Jugoslaviji,"  + "\n"
 		        + "2000. godine sertifikovao sistem kvaliteta prema medjunarodnom standardu ISO"  + "\n"
 		        + "kod Saveznog zavoda za standardizaciju i kod Medjunarodne sertifikacione organizacije"  + "\n"
-		        + "RWTÜV iz Esena."  + "\n";
+		        + "RWTZV iz Esena."  + "\n";
 		    
 		    JTextArea textAreal = new JTextArea(text, 5, 10);
 		    textAreal.setPreferredSize(new Dimension(500, 500));

@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -15,10 +16,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class GlavniFrame extends JFrame{
 
 	public static GlavniFrame instance = null;
+	public KontrolerSoftver kontrolerSoftver = KontrolerSoftver.getInstance();
+	public KontrolerZaposleni kontrolerZaposleni = KontrolerZaposleni.getInstance();
 	JTabbedPane tabs;
 	
 	public GlavniFrame() {
@@ -80,6 +84,7 @@ public class GlavniFrame extends JFrame{
 
 		// Tab zaposleni
 		
+		
 		String[] koloneZ = {"Ime:", 
 				"Prezime:",
 				"Jmbg:",
@@ -89,33 +94,23 @@ public class GlavniFrame extends JFrame{
 				"Softveri:",
 				"Pozicija:"
 				};
-		Object[][] podaciZ = {
-				{"Dunja", 
-				"Spanovic",
-				"0904000815000",
-				"9.4.2000.",
-				"Svetozara Miletica bb, Conoplja",
-				"spanovic2000@gmail.com",
-				"PhotoShop",
-				"Ilustrator"
-				},
-				{"Tamara", 
-				"Tirkajla",
-				"2309000815000",
-				"23.09.2000.",
-				"Radnicka 25, Novi Sad", 
-				"tamara.tirkajla00@gmail.com",
-				"ZBrush",
-				"Riger"
-				}
-			};
 		
-		JTable TabelaZaposleni = new JTable(podaciZ, koloneZ) {
+
+		List<Zaposleni> zaposleni = kontrolerZaposleni.dobaviZaposlene();
+		
+		DefaultTableModel modelZaposleni = new DefaultTableModel(koloneZ, 0);
+		for (Zaposleni zaposlen : zaposleni) {
+			modelZaposleni.addRow( new String[] {zaposlen.getIme(), zaposlen.getPrezime(), zaposlen.getJmbg(), zaposlen.getDatumRodjenja(), zaposlen.getAdresaStanovanjaFull(), zaposlen.getEmail(), zaposlen.getSoftver().getNazivSoft(),zaposlen.getPozicija()});
+		}
+
+		
+		JTable TabelaZaposleni = new JTable() {
 	        
 	        public boolean isCellEditable(int row, int column) {    
 	        	return false;               
 	        };
 	    };
+	    TabelaZaposleni.setModel(modelZaposleni);
 	    JScrollPane scrollPZaposleni = new JScrollPane(TabelaZaposleni);
 	    
 		tabs.addTab("Zaposleni", scrollPZaposleni);
@@ -130,29 +125,20 @@ public class GlavniFrame extends JFrame{
 				"Modifikatori:",
 				"Materijal, kamera, objekti i svetlo:"
 				};
-		Object[][] podaciS = {
-				{"ZBrush", 
-				"Standard, Dodavanje mase, Crvena",
-				".max",
-				"Cut",
-				"Bend",
-				"Staklo, Top, Model1, Plane light"
-				},
-				{"PhotoShop", 
-				"Deform, Iscrtavanje, Crna",
-				".psd",
-				"Mirror",
-				"Chamfer",
-				"Staklo, Front, Model2, Disc light"
-				},
-				};
 		
-		JTable TabelaSoftver = new JTable(podaciS, redoviS) {
+		List<Softver> softveri = kontrolerSoftver.dobaviSoftvere();
+		
+		DefaultTableModel modelSoftver = new DefaultTableModel(redoviS, 0);
+		for (Softver softver : softveri) {
+			modelSoftver.addRow( new String[] {softver.getNazivSoft(), softver.dobaviNaziveCetkica(), softver.getFajlFormat(), softver.dobaviNaziveAlata(), softver.getModifikator(), softver.getRender().getNaziv()});
+		}
+		JTable TabelaSoftver = new JTable() {
 	        
 	        public boolean isCellEditable(int row, int column) {    
 	        	return false;               
 	        };
 	    };
+	    TabelaSoftver.setModel(modelSoftver);
 	    JScrollPane scrollPSoftver = new JScrollPane(TabelaSoftver);
 		tabs.addTab("Sofver", scrollPSoftver);
 		p.add(tabs, BorderLayout.CENTER);

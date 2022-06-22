@@ -24,7 +24,15 @@ import java.awt.event.WindowEvent;
 
 public class PROZORNoviSoftver extends JFrame  {
 
-public PROZORNoviSoftver(){
+	public static PROZORNoviSoftver instance = null;
+	public static PROZORNoviSoftver getInstance() {
+		if (instance == null)
+			instance = new PROZORNoviSoftver();
+
+		return instance;
+	}
+	
+    public PROZORNoviSoftver(){
 	
 	JDialog dijalogSoftver;  
 	 

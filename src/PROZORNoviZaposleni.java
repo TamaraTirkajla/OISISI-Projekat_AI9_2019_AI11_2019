@@ -25,8 +25,17 @@ import javax.swing.WindowConstants;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
+
 public class PROZORNoviZaposleni extends JFrame {
 
+	public static PROZORNoviZaposleni instance = null;
+	public static PROZORNoviZaposleni getInstance() {
+		if (instance == null)
+			instance = new PROZORNoviZaposleni();
+
+		return instance;
+	}
+	
 public PROZORNoviZaposleni() {
 
 	JDialog dijalogZaposleni;  
@@ -126,8 +135,6 @@ public PROZORNoviZaposleni() {
 		
 	// Sofver
 	
-	// kod preuzet sa sajta
-	// http://www.java2s.com/Code/Java/Swing-JFC/CheckBoxDemo2.htm
 	JLabel lblSoftveri = new JLabel("Softveri:");
 	lblSoftveri.setPreferredSize(d3);
 	JCheckBox check1 = new JCheckBox("3dsMax"),

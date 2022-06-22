@@ -72,6 +72,9 @@ public class Zaposleni {
 	return Pozicija;
 	}
 	
+	public String getAdresaStanovanjaFull() {
+		return AdresaStanovanja.getUl() + " " + AdresaStanovanja.getBr() + " " + AdresaStanovanja.getGr() ;
+		}
 	// Zaposleni
 	
 	public Zaposleni(long id,String ime, String prezime, String jmbg, String datumRodjenja, String email, Adresa adresaStanovanja, Softver softver, String pozicija) {
