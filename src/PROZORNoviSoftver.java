@@ -20,6 +20,8 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 
 public class PROZORNoviSoftver extends JFrame  {
@@ -79,6 +81,28 @@ public class PROZORNoviSoftver extends JFrame  {
     lblNamenaCet.setPreferredSize(d1);
     JTextField txtNamenaCet=new JTextField();
     txtNamenaCet.setPreferredSize(d1);
+    txtNamenaCet.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
     pan1.add(lblNamenaCet);
 	pan1.add(txtNamenaCet);
 	
@@ -127,6 +151,29 @@ public class PROZORNoviSoftver extends JFrame  {
 	lblMaterijali.setPreferredSize(d1);
 	JTextField txtMaterijali=new JTextField();
 	txtMaterijali.setPreferredSize(d1);
+	txtMaterijali.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
 	pan1.add(lblMaterijali);
 	pan1.add(txtMaterijali);
 	
@@ -143,6 +190,28 @@ public class PROZORNoviSoftver extends JFrame  {
 	lblObjekti.setPreferredSize(d1);
 	JTextField txtObjekti=new JTextField();
 	txtObjekti.setPreferredSize(d1);
+	txtObjekti.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
 	pan1.add(lblObjekti);
 	pan1.add(txtObjekti);
 

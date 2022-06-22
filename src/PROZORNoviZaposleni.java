@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 
@@ -63,6 +64,28 @@ public PROZORNoviZaposleni() {
     lblIme.setPreferredSize(d3);
     JTextField txtIme=new JTextField();
     txtIme.setPreferredSize(d3);
+    txtIme.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
     pan2.add(lblIme);
 	pan2.add(txtIme);
 	    
@@ -72,6 +95,29 @@ public PROZORNoviZaposleni() {
 	lblIme.setPreferredSize(d3);
 	JTextField txtPrezime=new JTextField();
 	txtPrezime.setPreferredSize(d3);
+	txtPrezime.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
 	pan2.add(lblPrezime);
 	pan2.add(txtPrezime);
 	
@@ -103,6 +149,29 @@ public PROZORNoviZaposleni() {
 	lblUlica.setPreferredSize(d3);
 	JTextField txtUlica=new JTextField();
 	txtUlica.setPreferredSize(new Dimension(300,20));
+	txtUlica.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
 	pan2.add(lblUlica);
 	pan2.add(txtUlica);	
 	
@@ -112,6 +181,29 @@ public PROZORNoviZaposleni() {
 	lblBroj.setPreferredSize(d3);
 	JTextField txtBroj=new JTextField();
 	txtBroj.setPreferredSize(new Dimension(50,20));
+	txtBroj.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
 	pan2.add(lblBroj);
 	pan2.add(txtBroj);	
 	
@@ -121,6 +213,29 @@ public PROZORNoviZaposleni() {
 	lblGrad.setPreferredSize(d3);
 	JTextField txtGrad=new JTextField();
 	txtGrad.setPreferredSize(new Dimension(135,20));
+	txtGrad.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
 	pan2.add(lblGrad);
 	pan2.add(txtGrad);	
 	
@@ -130,6 +245,29 @@ public PROZORNoviZaposleni() {
 	lblEmail.setPreferredSize(d3);
 	JTextField txtEmail=new JTextField();
 	txtEmail.setPreferredSize(d3);
+	txtEmail.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			JTextField txt = (JTextField) e.getComponent();
+    		String str = txt.getText();
+    		System.out.println(str);
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
 	pan2.add(lblEmail);
 	pan2.add(txtEmail);
 		
